@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-//enablee cors
+//enable cors
 app.use(cors());
 app.options('*',cors());
 

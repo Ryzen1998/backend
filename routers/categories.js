@@ -39,6 +39,25 @@ router.post('/',async(req,res)=>{
 
 })
 
+router.put('/:id',async (req,res)=>{
+    const category =await Category.findByIdAndUpdate(req.params.id,{
+        name :req.body.name,
+        icon: req.body.icon,
+        color: req.body.color,
+    },{new:true});
+
+    if(!category){
+        return res.status(400).send('The category with the given ID was not found.');
+    }
+    else{
+        res.send(category);
+    }
+    
+
+});
+
+
+
 
 router.delete('/:id',(req,res)=>{
 
